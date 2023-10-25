@@ -7,6 +7,7 @@
 
 import Cocoa
 import SystemHUD
+import SFSymbol
 
 class ViewController: NSViewController {
 
@@ -23,9 +24,14 @@ class ViewController: NSViewController {
     }
 
     @IBAction func showBuildSuccessed(_ sender: Any) {
-        
+//        SystemHUD.shared.configuration = SystemHUD.shared.configuration.with {
+//            $0.image = SFSymbol(name: .checkmarkCircle).pointSize(80, weight: .regular).nsImage
+//            $0.title = "Load Successed"
+//            $0.imageSpacing = 20
+//        }
         SystemHUD.shared.configuration.image = NSImage(named: "Build")
         SystemHUD.shared.configuration.title = "Build Succeeded"
+        SystemHUD.shared.configuration.offset = .init(x: 0, y: 5)
         SystemHUD.shared.show(delay: 1.0)
     }
     
@@ -36,3 +42,4 @@ class ViewController: NSViewController {
     }
 }
 
+extension SystemHUD.Configuration: Then {}

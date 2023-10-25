@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "sfsymbol",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Mx-Iris/SFSymbol",
+      "state" : {
+        "branch" : "main",
+        "revision" : "9b9d1bc447701d64b64de56fccc74e5a1ce83d54"
+      }
+    },
+    {
       "identity" : "stackviewbuilder",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Mx-Iris/StackViewBuilder",

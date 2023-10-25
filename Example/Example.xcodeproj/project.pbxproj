@@ -12,6 +12,8 @@
 		E9EBE3222AE9578600F92948 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9EBE3212AE9578600F92948 /* Assets.xcassets */; };
 		E9EBE3252AE9578600F92948 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9EBE3232AE9578600F92948 /* Main.storyboard */; };
 		E9EBE3322AE957C000F92948 /* SystemHUD in Frameworks */ = {isa = PBXBuildFile; productRef = E9EBE3312AE957C000F92948 /* SystemHUD */; };
+		E9EBE3382AE976A300F92948 /* SFSymbol in Frameworks */ = {isa = PBXBuildFile; productRef = E9EBE3372AE976A300F92948 /* SFSymbol */; };
+		E9EBE33A2AE976CD00F92948 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EBE3392AE976CD00F92948 /* Then.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		E9EBE3242AE9578600F92948 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9EBE3262AE9578600F92948 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
 		E9EBE32F2AE957B100F92948 /* SystemHUD */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SystemHUD; path = ..; sourceTree = "<group>"; };
+		E9EBE3392AE976CD00F92948 /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +33,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9EBE3322AE957C000F92948 /* SystemHUD in Frameworks */,
+				E9EBE3382AE976A300F92948 /* SFSymbol in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +63,7 @@
 			children = (
 				E9EBE31D2AE9578500F92948 /* AppDelegate.swift */,
 				E9EBE31F2AE9578500F92948 /* ViewController.swift */,
+				E9EBE3392AE976CD00F92948 /* Then.swift */,
 				E9EBE3212AE9578600F92948 /* Assets.xcassets */,
 				E9EBE3232AE9578600F92948 /* Main.storyboard */,
 				E9EBE3262AE9578600F92948 /* Example.entitlements */,
@@ -91,6 +96,7 @@
 			name = Example;
 			packageProductDependencies = (
 				E9EBE3312AE957C000F92948 /* SystemHUD */,
+				E9EBE3372AE976A300F92948 /* SFSymbol */,
 			);
 			productName = Example;
 			productReference = E9EBE31A2AE9578500F92948 /* Example.app */;
@@ -121,6 +127,7 @@
 			);
 			mainGroup = E9EBE3112AE9578500F92948;
 			packageReferences = (
+				E9EBE3362AE976A200F92948 /* XCRemoteSwiftPackageReference "SFSymbol" */,
 			);
 			productRefGroup = E9EBE31B2AE9578500F92948 /* Products */;
 			projectDirPath = "";
@@ -149,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9EBE3202AE9578500F92948 /* ViewController.swift in Sources */,
+				E9EBE33A2AE976CD00F92948 /* Then.swift in Sources */,
 				E9EBE31E2AE9578500F92948 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,10 +370,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		E9EBE3362AE976A200F92948 /* XCRemoteSwiftPackageReference "SFSymbol" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Mx-Iris/SFSymbol";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		E9EBE3312AE957C000F92948 /* SystemHUD */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SystemHUD;
+		};
+		E9EBE3372AE976A300F92948 /* SFSymbol */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9EBE3362AE976A200F92948 /* XCRemoteSwiftPackageReference "SFSymbol" */;
+			productName = SFSymbol;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
