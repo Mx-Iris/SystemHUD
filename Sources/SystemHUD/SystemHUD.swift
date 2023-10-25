@@ -3,6 +3,8 @@ import AppKit
 public final class SystemHUD {
     public struct Configuration {
         public var image: NSImage?
+        public var imageBottomOffset: CGFloat = -10
+        public var imageSpacing: CGFloat = 15
         public var title: String
         public var titleFontSize: CGFloat = 18
         public var titleFontWeight: NSFont.Weight = .regular

@@ -13,6 +13,10 @@ class SystemHUDView: NSView {
         }
     }
 
+    var imageViewCenterYConstraint: NSLayoutConstraint!
+    
+    var textFieldTopConstraint: NSLayoutConstraint!
+    
     init(configuration: SystemHUD.Configuration) {
         self.configuration = configuration
         let frameRect = NSRect(x: 0, y: 0, width: 200, height: 200)
@@ -28,15 +32,18 @@ class SystemHUDView: NSView {
         visualEffectView.layer?.cornerRadius = 15
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        
+        imageViewCenterYConstraint = imageView.centerYAnchor.constraint(equalTo: visualEffectView.centerYAnchor, constant: -10)
+        textFieldTopConstraint = textField.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 15)
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: visualEffectView.centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: visualEffectView.centerYAnchor, constant: -10),
+            imageViewCenterYConstraint,
         ])
 
-        textField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            textFieldTopConstraint,
             textField.centerXAnchor.constraint(equalTo: visualEffectView.centerXAnchor),
-            textField.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 15),
             textField.leftAnchor.constraint(lessThanOrEqualTo: visualEffectView.leftAnchor, constant: 10),
             textField.rightAnchor.constraint(lessThanOrEqualTo: visualEffectView.rightAnchor, constant: -10),
         ])
@@ -55,5 +62,9 @@ class SystemHUDView: NSView {
         textField.font = .systemFont(ofSize: configuration.titleFontSize, weight: configuration.titleFontWeight)
         textField.alignment = configuration.titleAlignment
         imageView.image = configuration.image
+        
+        imageViewCenterYConstraint.constant = configuration.imageBottomOffset
+        textFieldTopConstraint.constant = configuration.imageSpacing
+        updateConstraints()
     }
 }
