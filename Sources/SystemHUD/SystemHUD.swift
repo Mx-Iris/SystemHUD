@@ -1,6 +1,6 @@
 import AppKit
 
-public final class SystemHUD {
+extension SystemHUD {
     public struct Configuration {
         public var image: NSImage?
         public var imageSpacing: CGFloat = 15
@@ -12,10 +12,12 @@ public final class SystemHUD {
         public var offset: CGPoint = .zero
         public var dismissAnimateDuration: TimeInterval = 1.0
     }
+}
 
-    public static let shared = SystemHUD()
-    
-    public var configuration: Configuration = .init(title: "This is a HUD") {
+public final class SystemHUD {
+    public static let `default` = SystemHUD(configuration: .init(title: "Default"))
+
+    public var configuration: Configuration {
         didSet {
             window.hudView.configuration = configuration
         }
@@ -27,7 +29,8 @@ public final class SystemHUD {
 
     private var animation: AlphaAnimation?
 
-    private init() {
+    public init(configuration: Configuration) {
+        self.configuration = configuration
         self.window = SystemHUDWindow(configuration: configuration)
         positionHUD()
     }
