@@ -3,14 +3,26 @@ import AppKit
 extension SystemHUD {
     public struct Configuration {
         public var image: NSImage?
-        public var imageSpacing: CGFloat = 15
+        public var imageSpacing: CGFloat
         public var title: String
-        public var titleFontSize: CGFloat = 18
-        public var titleFontWeight: NSFont.Weight = .regular
-        public var titleColor: NSColor = .labelColor
-        public var titleAlignment: NSTextAlignment = .center
-        public var offset: CGPoint = .zero
-        public var dismissAnimateDuration: TimeInterval = 1.0
+        public var titleFontSize: CGFloat
+        public var titleFontWeight: NSFont.Weight
+        public var titleColor: NSColor
+        public var titleAlignment: NSTextAlignment
+        public var offset: CGPoint
+        public var dismissAnimateDuration: TimeInterval
+        
+        public init(image: NSImage? = nil, imageSpacing: CGFloat = 15, title: String, titleFontSize: CGFloat = 18, titleFontWeight: NSFont.Weight = .regular, titleColor: NSColor = .labelColor, titleAlignment: NSTextAlignment = .center, offset: CGPoint = .zero, dismissAnimateDuration: TimeInterval = 1.0) {
+            self.image = image
+            self.imageSpacing = imageSpacing
+            self.title = title
+            self.titleFontSize = titleFontSize
+            self.titleFontWeight = titleFontWeight
+            self.titleColor = titleColor
+            self.titleAlignment = titleAlignment
+            self.offset = offset
+            self.dismissAnimateDuration = dismissAnimateDuration
+        }
     }
 }
 
