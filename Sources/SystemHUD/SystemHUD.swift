@@ -54,7 +54,6 @@ public final class SystemHUD {
                 x: screenFrame.midX - window.frame.width / 2,
                 y: screenFrame.midY - screenFrame.size.height * 0.38 - window.frame.height / 2
             )
-            print(hudPosition)
             window.setFrameOrigin(hudPosition)
         }
     }
